@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Cake Builder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+                <a href=""><i class="fa fa-home"></i></a>
+                <a href="#" id="showÇıkolatalar">Çıkolatalar <img src="chocolate.png" alt=""></a>
+                <a href="#" id="showKremalar">Kremalar  <img src="sour-cream.png" alt="" style="width: 60px; padding-left: 15px;"></a>
+                <a href="#" id="showÇıkolatalar">Çıkolatalar</a>
+                <a href="#" id="showKremalar">Kremalar</a>
+                <a href="#" id="showÇıkolatalar">Çıkolatalar</a>
+                <a href="#" id="showKremalar">Kremalar</a>
+                
+            </ul>
+        </nav>
+
+        <div class="cake-selection">
+            <div>
+                <h2>Select Your Shape</h2>
+                <button class="shape-button" data-shape="circle">Circle</button>
+                <button class="shape-button" data-shape="square">Square</button>
+    
+                <h2>Adet seçiniz</h2>
+                <button class="shape-button" data-price="1500" data-shape="five">5 kişilik</button>
+                <button class="shape-button" data-price="3000" data-shape="ten">10 kişilik</button>
+                <button class="shape-button" data-price="4500" data-shape="fifteen">15 kişilik</button>
+                <button class="shape-button" data-price="6000" data-shape="twenty">20 kişilik</button>
+                <button class="shape-button" data-price="7500" data-shape="twenty-five">25 kişilik</button>
+                <button class="shape-button" data-price="9000" data-shape="thirty">30 kişilik</button>
+                <button class="shape-button" data-price="10500" data-shape="forty">40 kişilik</button>
+                <button class="shape-button" data-price="13000" data-shape="fifty">50 kişilik</button>
+                
+    
+                <h2>Pasta türü seciniz</h2>
+                <button class="shape-button" data-shape="circle" data-price="1500">2 Katlı</button>
+                <button class="shape-button" data-shape="square" data-price="3000">3 Katlı</button>
+                <button class="shape-button" data-shape="circle" data-price="4000">4 Katlı</button>
+                <button class="shape-button" data-shape="square" data-price="5000">5 Katlı</button>
+               
+    
+    
+               
+            </div>
+           
+            <div id="çıkolatalar">
+                <div><span>Çıkolata</span></div>
+                <div class="chocolate">
+                    <div class="elements-container">
+                        <p class="name">name</p>
+                        <img class="draggable" src="cup.png" alt="" data-price="5">
+                        <p class="price">price</p>
+                    </div>
+                    <div class="elements-container">
+                        <p class="name">name</p>
+                        <img class="draggable" src="cup.png" alt="" data-price="7">
+                        <p class="price">price</p>
+                    </div>
+                    <div class="elements-container">
+                        <p class="name">name</p>
+                        <img class="draggable" src="cup.png" alt="" data-price="10">
+                        <p class="price">price</p>
+                    </div>
+                    <div class="elements-container">
+                        <p class="name">name</p>
+                        <img class="draggable" src="cup.png" alt="" data-price="8">
+                        <p class="price">price</p>
+                    </div>
+                    <div class="elements-container">
+                        <p class="name">name</p>
+                        <img class="draggable" src="cup.png" alt="" data-price="6">
+                        <p class="price">price</p>
+                    </div>
+                </div>
+            </div>
+           
+            <div id="kremalar" >
+                <div><span>Kremalar</span></div>
+            <div class="cream">
+                <div class="elements-container">
+                    <p class="name">name</p>
+                    <img class="draggable" src="cup2.jpg" alt="" data-price="12">
+                    <p class="price">price</p>
+                </div>
+                <div class="elements-container">
+                    <p class="name">name</p>
+                    <img class="draggable" src="cup2.jpg" alt="" data-price="9">
+                    <p class="price">price</p>
+                </div>
+                <div class="elements-container">
+                    <p class="name">name</p>
+                    <img class="draggable" src="cup2.jpg" alt="" data-price="15">
+                    <p class="price">price</p>
+                </div>
+                <div class="elements-container">
+                    <p class="name">name</p>
+                    <img class="draggable" src="cup2.jpg" alt="" data-price="14">
+                    <p class="price">price</p>
+                </div>
+                <div class="elements-container">
+                    <p class="name">name</p>
+                    <img class="draggable" src="cup2.jpg" alt="" data-price="20">
+                    <p class="price">price</p>
+                </div>
+            </div>
+            </div>
+
+            <div class="order-details">
+                <h2>Order Details</h2>
+                <div id="totalPrice">Toplam : TL 0</div>
+            </div>
+
+            
+            <div class="selected-options">
+                <h2>Selected Options</h2>
+                <ul id="selectedOptionsList"></ul>
+            </div>
+        </div>
+       
+        <div class="cake-builder">
+            <h2>Build Your Cake</h2>
+            <div class="cake-container">
+                <div class="cake"  id="circleImage" class="cake-image"></div>
+                <div class="cake" id="squareImage" class="cake-image"></div>
+                <!-- <div class="cake" id="shapeImageContainer"></div> -->
+                <div class="drop-spot" id="dropSpot1"></div>
+                <div class="drop-spot" id="dropSpot2"></div>
+                <div class="drop-spot" id="dropSpot3"></div>
+                <div class="drop-spot" id="dropSpot4"></div>
+                <div class="drop-spot" id="dropSpot5"></div>
+                <div class="drop-spot" id="dropSpot6"></div>
+                <div class="drop-spot" id="dropSpot7"></div>
+                <div class="drop-spot" id="dropSpot8"></div>
+                <div class="drop-spot" id="dropSpot9"></div>
+                <div class="drop-spot" id="dropSpot10"></div>
+            </div>
+            
+
+            
+            
+
+
+            <div class="extra">
+                <div class="choose-file">
+                    <p>Pastanı tasarlayamadın mı?İstediğin pastanın fotoğrafını hemen yükle</p>
+                    <input type="file">
+                </div>
+                <br>
+                <div class="write-to-us">
+                    <p>eklemek istediğiniz bir şey varsa bize not bırakın</p>
+                    <textarea placeholder="Mesaj"></textarea>
+                </div>
+            </div>
+            
+        </div>
+       
+    </div>
+    
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- <div class="elements-container">
+            <div class="draggable" data-price="5">Element 1</div>
+            <div class="draggable" data-price="7">Element 2</div>
+            <div class="draggable" data-price="10">Element 3</div>
+            <div class="draggable" data-price="8">Element 4</div>
+            <div class="draggable" data-price="6">Element 5</div>
+            <div class="draggable" data-price="12">Element 6</div>
+            <div class="draggable" data-price="9">Element 7</div>
+            <div class="draggable" data-price="15">Element 8</div>
+            <div class="draggable" data-price="14">Element 9</div>
+            <div class="draggable" data-price="20">Element 10</div>
+        </div> -->
